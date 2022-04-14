@@ -1,7 +1,5 @@
 package test;
 
-import java.sql.SQLOutput;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -31,9 +29,9 @@ public class StringNullTest {
         list2.sort(Integer::compareTo);
 
 
-        user u1 = new user("lu", 123);
-        user u2 = new user("lu", 123);
-        LinkedList<user> l3 = new LinkedList<>();
+        User u1 = new User("lu", 123);
+        User u2 = new User("lu", 123);
+        LinkedList<User> l3 = new LinkedList<>();
         l3.add(u1);
         l3.add(u2);
         l3.sort((u3, u4) -> u3.age - u4.age);
@@ -46,7 +44,7 @@ public class StringNullTest {
     }
 }
 
-class user{
+class User {
     String name;
     int age;
 
@@ -57,11 +55,11 @@ class user{
 
     @Override
     public boolean equals(Object obj) {
-        user u = (user)obj;
+        User u = (User)obj;
         return (name + age).equals(u.name + u.age);
     }
 
-    public user(String name, int age) {
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
